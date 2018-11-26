@@ -3,12 +3,12 @@
 </template>
 
 <style>
-  .liny-layout-footer {height:64px;
+  .liny-layout-footer {height:64px;flex:0 0 64px;
     line-height:64px;
     text-align:center;
-    font-size:12px;
+    font-size:14px;
     color:#999;
     background:#fff;
     border-top:1px solid #e9e9e9;
-    width:100%;}
+    }
 </style>

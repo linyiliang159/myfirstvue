@@ -61,9 +61,9 @@ exports.cssLoaders = function (options) {
     // less: generateLoaders('less'),
     less: generateLoaders('less', {
       modifyVars: {
-        'primary-color': '#2ab235',
-        'link-color': '#2ab235',
-        'border-radius-base': '2px',
+        'primary-color': '#52C41A',
+        'link-color': '#52C41A',
+        'border-radius-base': '4px',
       },
       javascriptEnabled: true,
     }),

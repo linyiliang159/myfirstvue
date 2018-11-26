@@ -1,5 +1,5 @@
 <template>
-  <a-row>
+  <a-row style="padding-top:30px;background:#fff;">
     <GrainStep :currentStep="0"></GrainStep>
     <a-col :span="24" style="margin-top:50px;text-align:left">
       <a-form :autoFormCreate="(form)=>{this.form = form}">

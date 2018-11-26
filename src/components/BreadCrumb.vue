@@ -10,5 +10,5 @@
 
 
 <style>
-  .liny-layout-breadcrumb {height:30px;line-height:30px;text-align:left;margin:10px 0;}
+  .liny-layout-breadcrumb {height:auto;line-height:30px;text-align:left;margin-bottom:20px;background:#fff;padding:15px;}
 </style>

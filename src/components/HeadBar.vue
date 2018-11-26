@@ -1,12 +1,7 @@
 <template>
-  <a-row class="header">
-    <a-col :span="20">
-      <div class="liny-header-logo"><a-icon type="cloud-download-o" />Ant</div>
-      <div style="float: left;line-height:44px;margin:0 20px;">
-        <a-button type="primary" @click="toggleCollapsed">
-          <a-icon :type="true ? 'menu-unfold' : 'menu-fold'" />
-        </a-button>
-      </div>
+  <a-row class="liny-header">
+    <a-col :span="21">
+      <a-icon class="liny-collapse" @click="toggleCollapsed" :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
       <a-menu
         v-model="current" :theme="theme"
         mode="horizontal"
@@ -33,7 +28,7 @@
         </a-menu-item>
       </a-menu>
     </a-col>
-    <a-col :span="4" style="font-size:16px;color:#fff;line-height:46px;">
+    <a-col :span="3" style="font-size:16px;line-height:46px;">
       <a-dropdown>
         <a class="ant-dropdown-link" href="javascript:;" >
           欢迎：administrator <a-icon type="down" />
@@ -55,24 +50,28 @@
 </template>
 
 <script>
-  import ACol from "ant-design-vue/es/grid/Col";
+  import headerStore from '../vuex/stores/HeaderStore'
   export default {
-    components: {ACol},
     data() {
       return {
         current: ['mail'],
         theme: 'dark',
       }
     },
+    computed:{
+      collapsed(){
+        return headerStore.state.collapsed;
+      },
+    },
     methods: {
       toggleCollapsed(){
-
+        headerStore.commit('collapse');
       }
     }
   };
 </script>
 
 <style>
-  .header {background:#001529;position:absolute;top:0;width:100%;}
-  .liny-header-logo{font-size:26px;color:#fff;line-height:46px;background:#1890ff;width:256px;float:left;}
+  .liny-header {background:#001529;flex:0 0 46px;max-height:46px;overflow:hidden;}
+  .liny-collapse{color:white;cursor:pointer;font-size:19px;line-height:46px;float:left;padding:0px 20px}
 </style>

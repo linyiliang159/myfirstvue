@@ -3,9 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-let user = new Vuex.Store({
+let header = new Vuex.Store({
   state: { //存储空间
-    collapsed: null
+    collapsed: false
   },
   mutations: { //响应事件
     collapse: function (state) {
@@ -15,4 +15,4 @@ let user = new Vuex.Store({
 });
 
 
-export default user;
+export default header;

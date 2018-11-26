@@ -1,7 +1,7 @@
 <template>
-  <div style="text-align:left;">
-    <a-menu :style="style"
-            :defaultSelectedKeys="['1']"
+  <div :class="style">
+    <div class="liny-logo">智慧粮库管理系统</div>
+    <a-menu :defaultSelectedKeys="['1']"
             mode="inline"
             :theme="theme"
             :selectedKeys="[current]"
@@ -39,22 +39,21 @@
   </div>
 </template>
 <script>
+  import headerStore from '../vuex/stores/HeaderStore'
+
   export default {
-    props: {
-      collapsed: {
-        type: Boolean,
-        default: false
-      }
-    },
-    computed:{
-      style(){
-        return this.collapsed?'':'width:256px;';
-      }
-    },
     data() {
       return {
         current: '1',
         theme: 'dark'
+      }
+    },
+    computed: {
+      collapsed() {
+        return headerStore.state.collapsed;
+      },
+      style() {
+        return this.collapsed ? 'liny-layout liny-layout-side liny-side-collapsed' : 'liny-layout liny-layout-side ';
       }
     },
     methods: {
@@ -65,3 +64,10 @@
   }
 
 </script>
+
+
+<style>
+  .liny-layout-side{background-color: #001529;flex:0 0 256px;width:256px;}
+  .liny-side-collapsed{flex:0 0 80px;width:80px;}
+  .liny-logo{height:46px;color:#fff;line-height:46px;font-size:24px;background-color: #52C41A;text-align:center;overflow:hidden;}
+</style>
