@@ -1,6 +1,7 @@
 <template>
   <div :class="style">
-    <div class="liny-logo">智慧粮库管理系统</div>
+    <div class="liny-logo" v-if="collapsed"><img src="../assets/logo.png" height="35px"></div>
+    <div class="liny-logo" v-else>智慧粮库管理系统</div>
     <a-menu :defaultSelectedKeys="['1']"
             mode="inline"
             :theme="theme"
@@ -45,7 +46,7 @@
     data() {
       return {
         current: '1',
-        theme: 'dark'
+        theme: 'dark',
       }
     },
     computed: {
@@ -67,7 +68,7 @@
 
 
 <style>
-  .liny-layout-side{background-color: #001529;flex:0 0 256px;width:256px;}
+  .liny-layout-side{background-color:#001529;flex:0 0 256px;width:256px;}
   .liny-side-collapsed{flex:0 0 80px;width:80px;}
-  .liny-logo{height:46px;color:#fff;line-height:46px;font-size:24px;background-color: #52C41A;text-align:center;overflow:hidden;}
+  .liny-logo{height:46px;color:#fff;line-height:46px;font-size:24px;background-color:#357fc4;text-align:center;overflow:hidden;}
 </style>

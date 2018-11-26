@@ -23,5 +23,5 @@
 </script>
 
 <style>
-  .liny-steps {text-align:left;width:80%;margin:0 auto;}
+  .liny-steps {text-align:left;width:70%;margin:0 auto;}
 </style>

@@ -7,14 +7,12 @@
 
 <script>
   import SideBar from './components/SideBar'
-  import TableTest from './components/TableTest'
   import Main from './components/Main'
 
   export default {
     name: 'App',
     components: {
       sideBar: SideBar,
-      tableTest: TableTest,
       Main: Main
     }
   }
