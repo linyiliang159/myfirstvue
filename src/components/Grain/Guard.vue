@@ -76,6 +76,7 @@
           <a-col :span="24">
             <a-form-item :labelCol="{span: 4}" :wrapperCol="{span: 12, offset: 12}">
               <a-button type='primary' @click="save">保存</a-button>
+              <a-button style="margin-left:8px;" type='primary' @click="clear">清空</a-button>
             </a-form-item>
           </a-col>
         </a-row>
@@ -121,6 +122,9 @@
             }
           },
         )
+      },
+      clear(){
+        this.form.resetFields();
       }
     },
     components: {
