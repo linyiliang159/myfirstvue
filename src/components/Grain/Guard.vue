@@ -76,7 +76,7 @@
           <a-col :span="24">
             <a-form-item :labelCol="{span: 4}" :wrapperCol="{span: 12, offset: 12}">
               <a-button type='primary' @click="save">保存</a-button>
-              <a-button style="margin-left:8px;" type='primary' @click="clear">清空</a-button>
+              <a-button style="margin-left:8px;" @click="clear">清空</a-button>
             </a-form-item>
           </a-col>
         </a-row>
@@ -87,7 +87,7 @@
 
 <script>
   import GrainStep from './GrainStep'
-  import ACol from "ant-design-vue/es/grid/Col";
+  import  {onLogin} from "../../vuex/actions/AccountAction";
 
   const formItemLayoutLeft = {
     labelCol: {span: 4, offset: 8},
@@ -115,20 +115,34 @@
     },
     methods: {
       save() {
-        this.form.validateFields(
-          (err, values) => {
-            if (!err) {
-              console.info(values)
-            }
-          },
-        )
+
+        console.log(this.$router.options.routes);
+
+        this.$router.options.routes.push({//插入路由
+          name:'list',
+          path: 'list',
+          component: resolve => require(['./RotationPlan'], resolve)//将组件用require引进来
+        });
+        this.$router.addRoutes(this.$router.options.routes);//调用addRoutes添加路由
+
+        console.log(this.$router.options.routes);
+
+
+        //onLogin();
+
+        // this.form.validateFields(
+        //   (err, values) => {
+        //     if (!err) {
+        //       console.info(values)
+        //     }
+        //   },
+        // )
       },
       clear(){
         this.form.resetFields();
       }
     },
     components: {
-      ACol,
       GrainStep: GrainStep
     }
   }

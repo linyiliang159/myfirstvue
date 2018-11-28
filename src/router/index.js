@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
 import Guard from '@/components/Grain/Guard'
+import RotationPlan from '@/components/Grain/RotationPlan'
+
 
 Vue.use(Router)
 
@@ -22,6 +24,11 @@ export default new Router({
       path: '/rkdj',
       name: 'Guard',
       component: Guard
-    }
+    },
+    {
+      path: '/RotationPlan',
+      name: 'RotationPlan',
+      component: RotationPlan
+    },
   ]
 })

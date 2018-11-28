@@ -9,7 +9,7 @@
             @click="handleClick" :inlineCollapsed="collapsed"
     >
       <a-menu-item key="1">
-        <router-link to="/home">
+        <router-link to="/RotationPlan">
           <a-icon type="mail"/>
           <span>菜单1</span>
         </router-link>
