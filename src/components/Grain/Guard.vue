@@ -118,14 +118,14 @@
 
         console.log(this.$router.options.routes);
 
-        this.$router.options.routes.push({//插入路由
-          name:'list',
-          path: 'list',
-          component: resolve => require(['./RotationPlan'], resolve)//将组件用require引进来
-        });
-        this.$router.addRoutes(this.$router.options.routes);//调用addRoutes添加路由
-
-        console.log(this.$router.options.routes);
+        // this.$router.options.routes.push({//插入路由
+        //   name:'list',
+        //   path: 'list',
+        //   component: resolve => require(['./RotationPlan'], resolve)//将组件用require引进来
+        // });
+        // this.$router.addRoutes(this.$router.options.routes);//调用addRoutes添加路由
+        //
+        // console.log(this.$router.options.routes);
 
 
         //onLogin();

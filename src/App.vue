@@ -1,25 +1,16 @@
 <template>
-  <div class="liny-layout liny-layout-has-sider">
-    <sideBar ref="sideBar"></sideBar>
-    <Main></Main>
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import SideBar from './components/SideBar'
-  import Main from './components/Main'
-
   export default {
-    name: 'App',
-    components: {
-      sideBar: SideBar,
-      Main: Main
-    }
+    name: 'App'
   }
 </script>
 
-
 <style>
-  .liny-layout{background:#f0f2f5;height:100%;display:flex;flex:auto;flex-direction:column;box-sizing:border-box;}
-  .liny-layout-has-sider{flex-direction:row;}
+  body{margin:0px;padding:0px;background:#1F2D3D;}
+  #app{margin:0px;padding:0px;height:100%;width:100%;position:absolute;}
 </style>

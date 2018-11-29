@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home'
 import Guard from '@/components/Grain/Guard'
 import RotationPlan from '@/components/Grain/RotationPlan'
+import Login from '@/components/Login'
 
 
 Vue.use(Router)
@@ -12,23 +13,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: Guard
-    },
-    {
-      path: '/home',
       name: 'Home',
-      component: Home
+      component: Home,
+      // children: [
+      //   { path: '/RotationPlan', component: RotationPlan , name: 'RotationPlan'},
+      //   { path: '/HelloWorld', component: HelloWorld , name: 'HelloWorld'},
+      //   { path: '/Guard', component: Guard , name: 'Guard'},
+      // ]
     },
     {
-      path: '/rkdj',
-      name: 'Guard',
-      component: Guard
-    },
-    {
-      path: '/RotationPlan',
-      name: 'RotationPlan',
-      component: RotationPlan
+      path: '/Login',
+      name: 'Login',
+      component: Login,
     },
   ]
 })
