@@ -35,7 +35,7 @@
 <script>
   import MenuUtils from '@/utils/MenuUtils'
 
-  let routers = [];
+  let routes = [];
 
   let menus = [
     {path: '/RotationPlan', component: 'Grain/RotationPlan', name: 'RotationPlan', leaf: true},
@@ -58,7 +58,7 @@
     methods: {
       login(data) {
         window.sessionStorage.setItem('user', JSON.stringify(data))
-        MenuUtils(routers, data)
+        MenuUtils(routes, data)
       },
       handleSubmit() {
         this.form.validateFields(
@@ -66,14 +66,8 @@
             if (!err) {
               this.iconLoading = true;
               this.login(menus);
-              console.log(routers);
-
-
-              this.$router.options.routes[0].children = routers;
-
+              this.$router.options.routes[0].children = routes;
               this.$router.addRoutes(this.$router.options.routes);
-
-              console.log(this.$router.options.routes);
               this.$router.push({path: '/'});
             }
           },

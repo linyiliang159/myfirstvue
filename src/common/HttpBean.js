@@ -10,7 +10,12 @@ export function httpPost(url, formObj, callback) {
       headers: {'Authorization': auth}
     })
     .then(function (res) {
-      callback(res.data);
+      let data = res.data;
+      if (data.success) {
+        callback(data.result);
+      } else {
+        console.log(data.error);
+      }
     })
     .catch(function (err) {
       console.log(err);
@@ -22,7 +27,12 @@ export function httpGet(url, callback) {
   axios.get('/api' + url, {
     headers: {'Authorization': auth}
   }).then(function (res) {
-    callback(res.data);
+    let data = res.data;
+    if (data.success) {
+      callback(data.result);
+    } else {
+      console.log(data.error);
+    }
   })
     .catch(function (err) {
       console.log(err);
